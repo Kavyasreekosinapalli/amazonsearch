@@ -71,3 +71,39 @@ public class Amazonsearch {
 		return decryptedpasswordInText;
 	}
 }
+
+
+
+
+
+
+import java.sql.Driver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Testlogin {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		// Launch the Chrome browser
+	    WebDriver driver = new ChromeDriver();
+
+	    // Navigate to the e-commerce website-amazon
+	    driver.get("https://lms3.vipsclub.org/login");
+	    driver.manage().window().maximize();
+
+	    // Wait for a few seconds to ensure the page is fully loaded
+	    Thread.sleep(2000);
+	 
+	    // Login logic
+	    // Enter username
+	    driver.findElement(By.name("email")).sendKeys("test@gmail.com");
+	    driver.findElement(By.name("password")).sendKeys("123456");
+	    driver.findElement(By.id("auth_login")).click();
+	    
+	    Thread.sleep(5000);
+	   
+	    driver.quit();
+				
